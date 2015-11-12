@@ -5,17 +5,16 @@
     <th>
       Task
     </th>
+    <th>
+    </th>
   </tr>
   <% @tasks.each do |task| %>
     <tr>
       <td><%= link_to "#{task.name}", "/tasks/#{task.id}" %></td>
-      <td><%= button_to "Delete", {action: "delete", id: "tasks/#{task.id}"}, :method => :delete,
-        data: {confirm: "You sure?"}
-
-        # :onclick => 'alert("You sure?")'
-        %></td>
+      <td><%= button_to "Delete", "tasks/#{task.id}", :method => :delete,
+      class: "btn btn-default", :onclick => 'alert("You sure?")' %></td>
     </tr>
   <% end %>
 </table>
 
-<%= button_to "Add a task", "/tasks/new" %>
+<%= button_to "Add a task", "/tasks/new", :method => :get, class: "btn btn-default btn-lg"%>
