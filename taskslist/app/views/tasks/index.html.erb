@@ -7,6 +7,15 @@
     </th>
   </tr>
   <% @tasks.each do |task| %>
-    <tr><td><%= link_to "#{task.name}", "/tasks/#{task.id}" %></td></tr>
+    <tr>
+      <td><%= link_to "#{task.name}", "/tasks/#{task.id}" %></td>
+      <td><%= button_to "Delete", {action: "delete", id: "tasks/#{task.id}"}, :method => :delete,
+        data: {confirm: "You sure?"}
+
+        # :onclick => 'alert("You sure?")'
+        %></td>
+    </tr>
   <% end %>
 </table>
+
+<%= button_to "Add a task", "/tasks/new" %>

@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Completed</th>
+    <th>Delete</th>
   </tr>
   <tr>
       <td><%= @task.name %></td>
@@ -19,6 +20,10 @@
         <% else %>
           completed on <%= @task.done_date %>
         <% end %>
+      </td>
+      <td>
+        <%= button_to "Delete", "/tasks/#{@task.id}", :method => :delete,
+          :onclick => 'alert("You sure?")' %>
       </td>
   </tr>
 
