@@ -5,6 +5,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    render '/tasks/form.html.erb'
   end
 
   def show
@@ -32,7 +33,7 @@ class TasksController < ApplicationController
   def edit
     @task = Task.find(params[:id])
     @edit = true
-    render '/tasks/new'
+    render '/tasks/form'
   end
 
   def update
@@ -41,7 +42,7 @@ class TasksController < ApplicationController
     task = Task.find(params[:id])
     @task = task.update(name: update_name, description: update_desc)
 
-    render '/tasks/new'
+    render '/tasks/form'
 
   end
 

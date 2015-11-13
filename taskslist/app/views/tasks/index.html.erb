@@ -14,7 +14,7 @@
       <td>
         <%= link_to "#{task.name}", "/#{task.id}" %>
       </td>
-      <% if task.done_date == nil %>
+      <% if task.done_date.nil? %>
         <td>
           <%= button_to "Complete", "/tasks/#{task.id}/complete", :method => :post,
         class: "btn btn-default", :onclick => 'alert("You sure?")' %>
