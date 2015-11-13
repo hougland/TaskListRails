@@ -5,7 +5,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-    render '/tasks/form.html.erb'
+    render '/tasks/form'
   end
 
   def show
@@ -38,12 +38,11 @@ class TasksController < ApplicationController
 
   def update
     update_name = task_params[:task][:name]
-    update_desc = task_params[:task][:desc]
+    update_desc = task_params[:task][:description]
     task = Task.find(params[:id])
-    @task = task.update(name: update_name, description: update_desc)
+    task.update(name: update_name, description: update_desc)
 
-    render '/tasks/form'
-
+    redirect_to '/tasks/'
   end
 
   private
