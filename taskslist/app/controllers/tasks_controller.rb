@@ -14,19 +14,19 @@ class TasksController < ApplicationController
 
   def create
     Task.create(task_params[:task])
-    redirect_to 'tasks/'
+    redirect_to '/tasks/'
   end
 
   def destroy
     Task.destroy(params["id"])
-    redirect_to 'tasks/'
+    redirect_to '/tasks/'
   end
 
   def complete
     task = Task.find(params[:id])
     task.done_date = Time.now
     task.save
-    redirect_to 'tasks/'
+    redirect_to '/tasks/'
   end
 
   def edit
