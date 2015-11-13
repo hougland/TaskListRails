@@ -18,7 +18,7 @@
         <% if @task.done_date.nil? %>
           not complete
         <% else %>
-          completed <%= distance_of_time_in_words(@task.done_date, Time.now) %>
+          completed <%= distance_of_time_in_words(@task.done_date, Time.now) %> ago
         <% end %>
       </td>
       <td>

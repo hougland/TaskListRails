@@ -1,4 +1,8 @@
-<h1>Add a Task</h1>
+<% if @edit == true %>
+  <h1>Edit a Task</h1>
+<% else %>
+  <h1>Add a Task</h1>
+<% end %>
 
 <%= form_for @task, :html => {:class => "form-inline"} do |f| %>
   <fieldset>
