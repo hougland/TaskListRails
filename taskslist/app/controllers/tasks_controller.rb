@@ -34,10 +34,8 @@ class TasksController < ApplicationController
   end
 
   def update
-    update_name = task_params[:task][:name]
-    update_desc = task_params[:task][:description]
     task = Task.find(params[:id])
-    task.update(name: update_name, description: update_desc)
+    task.update(task_params[:task])
 
     redirect_to '/tasks/'
   end

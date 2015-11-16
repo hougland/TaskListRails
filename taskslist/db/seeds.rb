@@ -1,3 +1,14 @@
+people = [
+  { name: "Ricky", fav_color: "green" },
+  { name: "Fred", fav_color: "rainbow"},
+  {name: "Alyssa", fav_color: "red"},
+  {name: "Brittany", fav_color: "black"},
+]
+
+people.each do |person|
+  Task.create person
+end
+
 def random_time
   Time.at(rand * Time.now.to_i)
 end
@@ -7,7 +18,7 @@ tasks = [
   { name: "Go to Brunch", description: "" },
   { name: "Go to Lunch", description: "", done_date: random_time },
   { name: "Go to Second Lunch", description: "" },
-  { name: "Play Video Games", description: "", done_date: random_time },
+  { name: "Play Video Games", description: "" },
   { name: "High Five Somebody You Don't Know", description: "", done_date: random_time },
   { name: "Plant Flowers", description: "", done_date: random_time },
   { name: "Call Mom", description: "" },
