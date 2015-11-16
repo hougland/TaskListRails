@@ -15,7 +15,7 @@
       </td>
       <td>
         <% if !task.person_id.nil? %>
-          <%= link_to "#{task.person.name}", "/people/#{task.id}" %>
+          <%= link_to "#{task.person.name}", "/people/#{task.person.id}" %>
         <% end %>
       </td>
       <% if task.done_date.nil? %>
@@ -39,3 +39,5 @@
 </table>
 
 <%= render 'add_task' %>
+
+<%= render partial: 'view_all_button', locals: { view: "People", button_path: "/people/" } %>
