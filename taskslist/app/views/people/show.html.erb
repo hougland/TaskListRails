@@ -12,18 +12,17 @@
     <td><%= @person.name %></td>
     <td><%= @person.fav_color %></td>
     <td>
-      <ul>
-      <% @person.tasks.each do |task| %>
-        <li><%= link_to "#{task.name}", "/tasks/#{task.id}"%>
-          <% if task.done_date.nil? %>
-            (not complete)
-          <% else %>
-            (complete)
-          <% end %>
-        </li>
-      <% end %>
-      </ul>
+      <%= button_to "View Tasks", "/people/#{@person.id}/tasks", method: :get,
+      class: "btn btn-default" %>
+    </td>
+    <td>
+      <!-- add button to edit person -->
+    </td>
+    <td>
+      <!-- add button to delete person -->
     </td>
   </tr>
 
 </table>
+
+<%= render partial: 'home_button' %>

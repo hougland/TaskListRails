@@ -15,7 +15,7 @@
       </td>
       <td>
         <% if !task.person_id.nil? %>
-          <%= task.person.name %>
+          <%= link_to "#{task.person.name}", "/people/#{task.id}" %>
         <% end %>
       </td>
       <% if task.done_date.nil? %>

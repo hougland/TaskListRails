@@ -4,6 +4,8 @@
   <tr>
     <th>Person</th>
     <th>Uncompleted Tasks</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
     <% @people.each do |person| %>
       <tr>
@@ -19,8 +21,15 @@
           <% end %>
           <%= count %>
         </td>
+        <td>
+          <!-- add button to edit person -->
+        </td>
+        <td>
+          <!-- add button to delete person -->
+        </td>
       </tr>
-
     <% end %>
 
 </table>
+
+<%= render partial: 'home_button' %>
