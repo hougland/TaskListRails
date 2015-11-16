@@ -1,0 +1,41 @@
+<h1>Here is One Task</h1>
+
+<table class = "table table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Person</th>
+    <th>Description</th>
+    <th>Completed</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </tr>
+  <tr>
+      <td><%= @task.name %></td>
+      <td>
+        <% if !@task.person_id.nil? %>
+          <%= @task.person.name %>
+        <% end %>
+      </td>
+      <td><% if @task.description == "" %>
+        none
+      <% else %>
+      <%= @task.description %>
+      <% end %></td>
+      <td>
+        <% if @task.done_date.nil? %>
+          not complete
+        <% else %>
+          completed <%= distance_of_time_in_words(@task.done_date, Time.now) %> ago
+        <% end %>
+      </td>
+      <td>
+        <%= render partial: 'delete_button', locals: { button_path: "/tasks/#{@task.id}" } %>
+      </td>
+      <td>
+        <%= render partial: 'edit_button', locals: { button_path: "/tasks/#{@task.id}/edit" } %>
+      </td>
+  </tr>
+
+</table>
+
+<%= render 'home_button' %>
