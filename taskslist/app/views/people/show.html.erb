@@ -1,0 +1,29 @@
+<h1>Here is One Person</h1>
+
+<table class = "table table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Favorite Color</th>
+    <th>Tasks</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr>
+    <td><%= @person.name %></td>
+    <td><%= @person.fav_color %></td>
+    <td>
+      <ul>
+      <% @person.tasks.each do |task| %>
+        <li><%= link_to "#{task.name}", "/tasks/#{task.id}"%>
+          <% if task.done_date.nil? %>
+            (not complete)
+          <% else %>
+            (complete)
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+    </td>
+  </tr>
+
+</table>
