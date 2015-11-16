@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 
   get '/people' => 'people#index'
   get 'people/:id/tasks' => 'people#show_tasks'
+  get 'people/new' => 'people#new'
+  post 'people' => 'people#create'
   get '/people/:id' => 'people#show'
+  delete '/people/:id' => 'people#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
