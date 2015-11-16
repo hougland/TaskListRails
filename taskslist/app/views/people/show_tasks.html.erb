@@ -5,8 +5,6 @@
     <th>Task</th>
     <th>Description</th>
     <th>Complete</th>
-    <th>Edit</th>
-    <th>Delete</th>
   </tr>
 
     <% @person.tasks.each do |task| %>
@@ -18,12 +16,6 @@
         <% else %>
           complete
         <% end %>
-      </td>
-      <td>
-        <!-- add edit button -->
-      </td>
-      <td>
-        <!-- add delete button -->
       </td>
     </tr>
     <% end %>

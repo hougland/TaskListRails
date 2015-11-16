@@ -25,6 +25,17 @@ class PeopleController < ApplicationController
     redirect_to '/people/'
   end
 
+  def edit
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    person = Person.find(params[:id])
+    person.update(person_params[:person])
+
+    redirect_to '/people/'
+  end
+
   private
   def person_params
     params.permit(person:[:name, :fav_color])

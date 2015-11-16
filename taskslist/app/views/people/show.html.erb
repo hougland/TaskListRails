@@ -16,10 +16,12 @@
       class: "btn btn-default" %>
     </td>
     <td>
-      <!-- add button to edit person -->
+      <%= render partial: 'edit_button', locals:
+        { button_path: "/people/#{@person.id}/edit" } %>
     </td>
     <td>
-      <!-- add button to delete person -->
+      <%= render partial: 'delete_button', locals:
+        { button_path: "/people/#{@person.id}" } %>
     </td>
   </tr>
 

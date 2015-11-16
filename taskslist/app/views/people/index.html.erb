@@ -22,11 +22,12 @@
           <%= count %>
         </td>
         <td>
-          <%= render partial: 'delete_button', locals:
-            { button_path: "/people/#{person.id}" } %>
+          <%= render partial: 'edit_button', locals:
+            { button_path: "/people/#{person.id}/edit" } %>
         </td>
         <td>
-          <!-- add button to delete person -->
+          <%= render partial: 'delete_button', locals:
+            { button_path: "/people/#{person.id}" } %>
         </td>
       </tr>
     <% end %>
